@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class RequestService {
 
   // URL de la API
-  private url = 'https://app-sgt-be.politesand-6f1a9d36.eastus.azurecontainerapps.io/api';
+  private url = 'https://app-sgt-be.happyglacier-20dcdaaa.eastus.azurecontainerapps.io/api';
 
   constructor(private http: HttpClient) { }
 

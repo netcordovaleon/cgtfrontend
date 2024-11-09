@@ -1,7 +1,7 @@
 <main class="main">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">SGT</a>
+    <a class="navbar-brand" href="#">&nbsp;&nbsp;SGT</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,7 +48,7 @@
           <tbody>
             <tr *ngFor="let item of listRequest">
               <td>
-                <button *ngIf="item.requestStatus !== 'Deny'" class="btn btn-success"><i class="fa-solid fa-reply"></i></button>&nbsp;&nbsp;
+                <button *ngIf="(item.requestStatus !== 'Deny' && item.requestStatus !== 'Approved')" class="btn btn-success"><i class="fa-solid fa-reply"></i></button>&nbsp;&nbsp;
                 <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
               </td>
               <td> {{item.requestingUserId}} </td>
@@ -58,7 +58,7 @@
               <td> {{item.description}} </td>
               <td>
                 <span style="font-weight: bold;"
-                  [ngClass]="{ 'text-danger': item.requestStatus === 'Deny', 'text-warning' : item.requestStatus === 'Pending' }">
+                  [ngClass]="{ 'text-danger': item.requestStatus === 'Deny', 'text-warning' : item.requestStatus === 'Pending', 'text-success' : item.requestStatus === 'Approved' }">
                   {{item.requestStatus}}
                 </span>
               </td>
